@@ -16,8 +16,8 @@
 			<div class="navbar-center">
 				<a class="text-xl transition-colors hover:text-orange-600 hover:font-extrabold" href="/">Home</a>
 				<a href="/about">About</a>
-				<a href="/blog">Resume</a>
-				<a href="/contact">Projects</a>
+				<!-- <a href="/blog">Resume</a>
+				<a href="/contact">Projects</a> -->
 			</div>
 		</div>
 	</nav>

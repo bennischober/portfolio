@@ -15,7 +15,7 @@
 
 	onMount(() => {
 		// check, if user prefers dark mode
-		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 		if (prefersDark) {
 			setTheme(darkTheme);
 		} else {
@@ -29,7 +29,7 @@
 	};
 </script>
 
-<label class="swap swap-rotate">
+<label class="swap swap-rotate" data-testid="theme-toggle">
 	<!-- this hidden checkbox controls the state -->
 	<input type="checkbox" on:change={toggleTheme} />
 
