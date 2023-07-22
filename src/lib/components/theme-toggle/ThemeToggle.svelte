@@ -1,15 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
-	const lightTheme = 'light';
-	const darkTheme = 'luxury';
+	import { config } from '$lib/config';
 
 	const toggleTheme = () => {
-		const theme = localStorage.getItem('theme');
-		if (theme === darkTheme) {
-			setTheme(lightTheme);
+		const localTheme = localStorage.getItem('theme');
+		if (localTheme === config.theme.dark) {
+			setTheme(config.theme.light);
 		} else {
-			setTheme(darkTheme);
+			setTheme(config.theme.dark);
 		}
 	};
 
@@ -17,9 +15,9 @@
 		// check, if user prefers dark mode
 		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 		if (prefersDark) {
-			setTheme(darkTheme);
+			setTheme(config.theme.dark);
 		} else {
-			setTheme(lightTheme);
+			setTheme(config.theme.light);
 		}
 	});
 
